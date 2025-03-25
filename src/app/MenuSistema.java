@@ -219,7 +219,7 @@ public class MenuSistema {
 
         Motorista motorista = motoristas.get(idx);
 
-        System.out.println("\n-- Dados atuais do motorista --");
+        System.out.println("\n--- Dados atuais do motorista ---");
         System.out.println("Nome: " + motorista.getNome());
         System.out.println("CPF: " + motorista.getCpf());
         System.out.println("Telefone: " + motorista.getTelefone());
