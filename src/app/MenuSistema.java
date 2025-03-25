@@ -267,7 +267,7 @@ public class MenuSistema {
 
         Veiculo veiculo = veiculos.get(idx);
 
-        System.out.println("\n-- Dados atuais do veículo --");
+        System.out.println("\n--- Dados atuais do veículo ---");
         System.out.println("Tipo: " + veiculo.getClass().getSimpleName());
         System.out.println("Placa: " + veiculo.getPlaca());
         System.out.println("Modelo: " + veiculo.getModelo());
