@@ -3,7 +3,7 @@ package modelo;
 public class Pix extends FormaDePagamento {
     private String chavePix;
 
-    public Pix() {
+    // Construtor
     public Pix(String chavePix) {
         this.chavePix = chavePix;
     }

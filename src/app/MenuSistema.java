@@ -362,7 +362,11 @@ public class MenuSistema {
         FormaDePagamento forma = null;
 
         switch (tipo) {
-            case 1 -> forma = new Pix();
+            case 1 -> {
+                System.out.print("Digite a chave Pix: ");
+                String chavePix = scanner.nextLine();
+                forma = new Pix(chavePix); // Passa a chavePix ao construtor
+            }
             case 2 -> forma = new Dinheiro();
             case 3 -> {
                 System.out.print("Número do cartão: ");
