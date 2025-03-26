@@ -14,7 +14,7 @@ public class Pix extends FormaDePagamento {
 
     @Override
     public boolean processarPagamento(double valor) {
-        System.out.println("Pagamento d R$" + valor + " realizado via Pix: " + chavePix);
+        System.out.println("Pagamento de R$" + valor + " realizado via Pix: " + chavePix);
         return true;
     }
 }

@@ -363,7 +363,7 @@ public class MenuSistema {
 
         switch (tipo) {
             case 1 -> {
-                System.out.print("Digite a chave Pix: ");
+                System.out.print("Digit a chave Pix: ");
                 String chavePix = scanner.nextLine();
                 forma = new Pix(chavePix); // Passa a chavePix ao construtor
             }
