@@ -42,21 +42,41 @@ public class MenuSistema {
             } while (tipoUsuario != 4);
         }
 
-
         private static void menuAdministrador() {
+            int opcao;
+            do {
+                System.out.println("\n===== MENU ADMINISTRADOR =====");
+                System.out.println("1. Gerenciar Motoristas");
+                System.out.println("2. Gerenciar Clientes");
+                System.out.println("3. Gerenciar Veículos");
+                System.out.println("4. Lista Tudo");
+                System.out.println("5. Voltar");
+                System.out.print("Escolha uma opção: ");
+                opcao = scanner.nextInt();
+                scanner.nextLine();
+
+                switch (opcao) {
+                    case 1 -> menuMotoristasadm();
+                    case 2 -> menuClientesadm();
+                    case 3 -> menuVeiculosadm();
+                    case 4 -> listarTudo();
+                    case 5 -> System.out.println("Retornando...");
+                    default -> System.out.println("Opção inválida.");
+                }
+            } while (opcao != 5);
+
+        }
+
+        private static void menuMotoristasadm() {
         int opcao;
         do {
-            System.out.println("\n===== MENU ADMINISTRADOR =====");
-                    System.out.println("1. Cadastrar Motorista");
+            System.out.println("\n--- GERENCIAR MOTORISTAS ---");
+            System.out.println("1. Cadastrar Motorista");
             System.out.println("2. Atualizar Motorista");
             System.out.println("3. Remover Motorista");
             System.out.println("4. Listar Motoristas");
             System.out.println("5. Validar Motorista");
-            System.out.println("6. Cadastrar Cliente");
-            System.out.println("7. Atualizar Cliente");
-            System.out.println("8. Remover Cliente");
-            System.out.println("9. Listar Clientes");
-            System.out.println("10. Voltar");
+            System.out.println("6. Voltar");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
             scanner.nextLine();
@@ -67,14 +87,58 @@ public class MenuSistema {
                 case 3 -> removerMotorista();
                 case 4 -> listarMotoristas();
                 case 5 -> validarMotorista();
-                case 6 -> cadastrarCliente();
-                case 7 -> atualizarCliente();
-                case 8 -> removerCliente();
-                case 9 -> listarClientes();
-                case 10 -> System.out.println("Retornando...");
+                case 6 -> System.out.println("Retornando...");
                 default -> System.out.println("Opção inválida.");
             }
-        } while (opcao != 10);
+        } while (opcao != 6);
+    }
+
+        private static void menuClientesadm() {
+        int opcao;
+        do {
+            System.out.println("\n--- GERENCIAR CLIENTES ---");
+            System.out.println("1. Cadastrar Cliente");
+            System.out.println("2. Atualizar Cliente");
+            System.out.println("3. Remover Cliente");
+            System.out.println("4. Listar Clientes");
+            System.out.println("5. Voltar");
+            System.out.print("Escolha uma opção: ");
+            opcao = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (opcao) {
+                case 1 -> cadastrarCliente();
+                case 2 -> atualizarCliente();
+                case 3 -> removerCliente();
+                case 4 -> listarClientes();
+                case 5 -> System.out.println("Retornando...");
+                default -> System.out.println("Opção inválida.");
+            }
+        } while (opcao != 5);
+    }
+
+        private static void menuVeiculosadm() {
+        int opcao;
+        do {
+            System.out.println("\n--- GERENCIAR VEÍCULOS ---");
+            System.out.println("1. Cadastrar Veículo");
+            System.out.println("2. Atualizar Veículo");
+            System.out.println("3. Remover Veículo");
+            System.out.println("4. Listar Veículos");
+            System.out.println("5. Voltar");
+            System.out.print("Escolha uma opção: ");
+            opcao = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (opcao) {
+                case 1 -> cadastrarVeiculo();
+                case 2 -> atualizarVeiculo();
+                case 3 -> removerVeiculo();
+                case 4 -> listarVeiculos();
+                case 5 -> System.out.println("Retornando...");
+                default -> System.out.println("Opção inválida.");
+            }
+        } while (opcao != 5);
     }
         private static void menuMotorista() {
             int opcao;
@@ -121,7 +185,7 @@ public class MenuSistema {
             }
         } while (opcao != 5);
     }
-    private static void cadastrarCliente() {
+        private static void cadastrarCliente() {
             System.out.print("Nome: ");
             String nome = scanner.nextLine();
             System.out.print("CPF: ");
@@ -622,13 +686,6 @@ public class MenuSistema {
 
             System.out.println("\n-- Veículos --");
             veiculos.forEach(System.out::println);
-        }
-        private static void salvarTudo() {
-            Persistencia.salvar("clientes.dat", clientes);
-            Persistencia.salvar("viagens.dat", viagens);
-            Persistencia.salvar("motoristas.dat", motoristas);
-            Persistencia.salvar("veiculos.dat", veiculos);
-            System.out.println("Dados salvos. Encerrando o sistema...");
         }
         private static void avaliarMotorista() {
             System.out.println("\n== Avaliar Motorista ==");
