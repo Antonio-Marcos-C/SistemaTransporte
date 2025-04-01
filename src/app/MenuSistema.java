@@ -22,7 +22,7 @@ public class MenuSistema {
             int tipoUsuario;
 
             do {
-                System.out.println("Bem-vindo ao Sistema de Transporte!");
+                System.out.println("Bem-vindo ao Sistema de Transporte!!");
                 System.out.println("Escolha o tipo de usuário:");
                 System.out.println("[1] Cliente");
                 System.out.println("[2] Motorista");
