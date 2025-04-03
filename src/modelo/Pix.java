@@ -1,6 +1,8 @@
 package modelo;
 
 public class Pix extends FormaDePagamento {
+    private static final long serialVersionUID = 1L;
+
     private String chavePix;
 
     // Construtor

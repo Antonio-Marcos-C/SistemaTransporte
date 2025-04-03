@@ -1,6 +1,8 @@
 package modelo;
 
 public class CartaoCredito extends FormaDePagamento {
+    private static final long serialVersionUID = 1L;
+
     private String numeroCartao;
     private double limiteDisponivel;
 

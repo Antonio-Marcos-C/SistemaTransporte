@@ -3,6 +3,8 @@ package modelo;
 import java.io.Serializable;
 
 public abstract class Pessoa implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private String nome;
     private String cpf;
     private String telefone;
@@ -13,7 +15,6 @@ public abstract class Pessoa implements Serializable {
         this.telefone = telefone;
     }
 
-    // Getters e Setters
     public String getNome() {
         return nome;
     }
