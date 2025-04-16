@@ -116,20 +116,24 @@ public class MenuSistema {
         do {
             System.out.println("\n===== MENU MOTORISTA =====");
             System.out.println("1. Cadastrar Veículo");
-            System.out.println("2. Avaliar Passageiro");
-            System.out.println("3. Ver Avaliações");
-            System.out.println("4. Voltar");
+            System.out.println("2. Remover Veículo");
+            System.out.println("3. Avaliar Passageiro");
+            System.out.println("4. Ver Avaliações");
+            System.out.println("5. Voltar");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
             scanner.nextLine();
 
             switch (opcao) {
                 case 1 -> veiculoController.cadastrarVeiculo(scanner);
-                case 2 -> motoristaController.avaliarPassageiro(clientes);
-                case 3 -> motoristaController.listarAvaliacoesMotorista();
-                case 4 -> System.out.println("Retornando...");
+                case 2 -> veiculoController.removerVeiculo(scanner);
+                case 3 -> motoristaController.avaliarPassageiro(clientes);
+                case 4 -> motoristaController.listarAvaliacoesMotorista();
+                case 5 -> System.out.println("Retornando...");
                 default -> System.out.println("Opção inválida.");
             }
+
+
         } while (opcao != 4);
     }
 

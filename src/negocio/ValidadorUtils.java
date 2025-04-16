@@ -1,5 +1,6 @@
 package negocio;
 
+
 public class ValidadorUtils {
 
     public static boolean validarCPF(String cpf) {
@@ -34,6 +35,10 @@ public class ValidadorUtils {
         telefone = telefone.replaceAll("[^\\d]", ""); // remove qualquer caractere não numérico
 
         return telefone.length() >= 10 && telefone.length() <= 11;
+    }
+    public static boolean placaValida(String placa) {
+
+        return placa.matches("^[A-Z]{3}[0-9][A-Z0-9][0-9]{2}$");
     }
 
 }
