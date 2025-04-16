@@ -343,7 +343,7 @@ public class ClienteController {
 
         } catch (InputMismatchException e) {
             System.out.println("❌ Entrada inválida. Certifique-se de usar números inteiros onde solicitado.");
-            scanner.nextLine(); // limpa o buffer
+            scanner.nextLine();
         } catch (Exception e) {
             System.out.println("❌ Erro inesperado: " + e.getMessage());
         }
