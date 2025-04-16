@@ -1,9 +1,9 @@
 package modelo;
 
 public class Avaliacao {
-    private String avaliador; // Nome ou ID do avaliador
-    private String avaliado;  // Nome ou ID do avaliado
-    private int nota; // de 1 a 5
+    private String avaliador;
+    private String avaliado;
+    private int nota;
     private String comentario;
 
     public Avaliacao(String avaliador, String avaliado, int nota, String comentario) {
@@ -13,7 +13,6 @@ public class Avaliacao {
         this.comentario = comentario;
     }
 
-    // Getters e Setters
 
     @Override
     public String toString() {
