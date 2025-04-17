@@ -1,9 +1,6 @@
 package app;
 
-import controller.ClienteController;
-import controller.MotoristaController;
-import controller.VeiculoController;
-import controller.SolicitarViagemController;
+import controller.*;
 import dados.Persistencia;
 import modelo.Cliente;
 import modelo.Motorista;
@@ -25,6 +22,8 @@ public class MenuSistema {
     private static final MotoristaController motoristaController = new MotoristaController(motoristas);
     private static final VeiculoController veiculoController = new VeiculoController(veiculos);
     private static final SolicitarViagemController solicitarViagemController = new SolicitarViagemController(clientes, motoristas, veiculos, viagens);
+    private static final ViagemController viagemController = new ViagemController(scanner);
+
 
 
 
@@ -66,7 +65,10 @@ public class MenuSistema {
             System.out.println("7. Atualizar Cliente");
             System.out.println("8. Remover Cliente");
             System.out.println("9. Listar Clientes");
-            System.out.println("10. Voltar");
+            System.out.println("10. Listar Cidades com Restrição");
+            System.out.println("11. Adicionar Cidade com Restrição");
+            System.out.println("12. Remover Cidade com Restrição");
+            System.out.println("13. Voltar");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
             scanner.nextLine();
@@ -81,10 +83,13 @@ public class MenuSistema {
                 case 7 -> clienteController.atualizarCliente();
                 case 8 -> clienteController.removerCliente();
                 case 9 -> clienteController.listarClientes();
-                case 10 -> System.out.println("Retornando...");
+                case 10 -> viagemController.listarCidadesRestritas();
+                case 11 -> viagemController.adicionarCidadeRestrita();
+                case 12 -> viagemController.removerCidadeRestrita();
+                case 13 -> System.out.println("Retornando...");
                 default -> System.out.println("Opção inválida.");
             }
-        } while (opcao != 10);
+        } while (opcao != 13);
     }
 
     private static void menuCliente() {
